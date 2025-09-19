@@ -52,30 +52,6 @@ function Home() {
 }
 
 
-function TechStack() {
-  const logos = [
-    { name: "Kotlin", src: kotlinLogo },
-    { name: "Haskell", src: "/logos/haskell.svg" },
-    { name: "Python", src: "/logos/python.svg" },
-    { name: "C", src: "/logos/c.svg" },
-    { name: "JavaScript", src: "/logos/javascript.svg" },
-    { name: "React", src: "/logos/react.svg" },
-  ];
-  return (
-    <section className="py-20 px-6 md:px-16 text-center">
-      <h3 className="text-3xl font-bold mb-10">Tech Stack</h3>
-      <div className="flex flex-wrap justify-center gap-10">
-        {logos.map((logo) => (
-          <div key={logo.name} className="flex flex-col items-center">
-            <img src={logo.src} alt={logo.name} className="w-20 h-20" />
-            <span className="mt-2 text-sm font-medium">{logo.name}</span>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function Education() {
   return (
     <section className="py-20 px-6 md:px-16">
@@ -132,7 +108,6 @@ export default function Portfolio() {
             {/* <h1 className="logo">Your Name</h1> */}
             <nav className="nav-links">
                <NavLink to="/" className="nav-link">Home</NavLink>
-                <NavLink to="/tech" className="nav-link">Tech Stack</NavLink>
                 <NavLink to="/education" className="nav-link">Education</NavLink>
                 <NavLink to="/projects" className="nav-link">Projects</NavLink>
             </nav>
@@ -141,7 +116,6 @@ export default function Portfolio() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/tech" element={<TechStack />} />
           <Route path="/education" element={<Education />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
