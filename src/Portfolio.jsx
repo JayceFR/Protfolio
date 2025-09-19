@@ -10,44 +10,47 @@ import reactLogo from './assets/logos/react.svg'
 function Home() {
   return (
     <>
-    <section className="home-section">
-      <div className="home-text">
-        <h2>Hi, I’m Jayce 👋</h2>
-        <p>
-          Penultimate year Computing student at Imperial College London, seeking a
-          Software Engineering Internship...
-        </p>
-        <p>
-          I have experience in full-stack development, mobile development and game
-          development.
-        </p>
+      <section className="home-section">
+        {/* Left Text */}
+        <div className="home-text">
+          <h2>
+            Hi, I’m Jayce 👋
+          </h2>
+          <p className="intro">
+            Penultimate year Computing student at Imperial College London, seeking a
+            <strong> Software Engineering Internship</strong>.
+          </p>
+          <p>
+            Experienced in <strong>full-stack development</strong>, <strong>mobile development</strong>, and <strong>game development</strong>.
+          </p>
 
-        {/* Tech stack logos */}
-        <div className="tech-stack">
+          {/* Tech stack logos */}
+          <div className="tech-stack">
             <img src={cLogo} alt="C" />
             <img src={kotlinLogo} alt="Kotlin" />
             <img src={haskellLogo} alt="Haskell" />
             <img src={pythonLogo} alt="Python" />
             <img src={jsLogo} alt="JavaScript" />
             <img src={reactLogo} alt="React" />
-
+          </div>
         </div>
-      </div>
 
-      {/* Image Right */}
-      <div>
-        <img src={pfp} alt="Your portrait" className="pfp" />
-      </div>
-    </section>
+        {/* Right Image */}
+        <div className="home-image">
+          <img src={pfp} alt="Your portrait" className="pfp" />
+        </div>
+      </section>
 
-    <div className="contact-bar">
+      {/* Contact bar */}
+      <div className="contact-bar">
         <a href="mailto:jaycejefferson31@gmail.com">📧 Email</a>
         <a href="https://github.com/your-github" target="_blank" rel="noreferrer">💻 GitHub</a>
         <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
-    </div>
+      </div>
     </>
   );
 }
+
 
 function TechStack() {
   const logos = [
