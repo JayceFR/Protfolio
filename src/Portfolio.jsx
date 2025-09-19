@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import pfp from './assets/jayce_pfp.png'
 import kotlinLogo from './assets/logos/kotlin.svg'
 import haskellLogo from './assets/logos/haskell.svg'
@@ -6,45 +6,34 @@ import pythonLogo from './assets/logos/python.svg'
 import cLogo from './assets/logos/c.png'
 import jsLogo from './assets/logos/js.svg'
 import reactLogo from './assets/logos/react.svg'
+import { useEffect, useRef } from "react";
 
+// ---------------- HOME ----------------
 function Home() {
   return (
-    <>
-      <section className="home-section">
-        {/* Left Text */}
-        <div className="home-text">
-          <h2>
-            Hi, I’m Jayce 👋
-          </h2>
-          <p className="intro">
-            Penultimate year Computing student at Imperial College London, seeking a
-            <strong> Software Engineering Internship</strong>.
-          </p>
-          <p>
-            Experienced in <strong>full-stack development</strong>, <strong>mobile development</strong>, and <strong>game development</strong>.
-          </p>
-
-          {/* Tech stack logos */}
-          <div className="tech-stack">
-            <img src={cLogo} alt="C" />
-            <img src={kotlinLogo} alt="Kotlin" />
-            <img src={haskellLogo} alt="Haskell" />
-            <img src={pythonLogo} alt="Python" />
-            <img src={jsLogo} alt="JavaScript" />
-            <img src={reactLogo} alt="React" />
-          </div>
+    <section className="home-section">
+      <div className="home-text">
+        <h2>Hi, I’m Jayce 👋</h2>
+        <p className="intro">
+          Penultimate year Computing student at Imperial College London, seeking a <strong>Software Engineering Internship</strong>.
+        </p>
+        <p>
+          Experienced in <strong>full-stack development</strong>, <strong>mobile development</strong>, and <strong>game development</strong>.
+        </p>
+        <div className="tech-stack">
+          <img src={cLogo} alt="C" />
+          <img src={kotlinLogo} alt="Kotlin" />
+          <img src={haskellLogo} alt="Haskell" />
+          <img src={pythonLogo} alt="Python" />
+          <img src={jsLogo} alt="JavaScript" />
+          <img src={reactLogo} alt="React" />
         </div>
-
-        {/* Right Image */}
-        <div className="home-image">
-          <img src={pfp} alt="Your portrait" className="pfp" />
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 
-
+// ---------------- EDUCATION ----------------
 function Education() {
   return (
     <section className="timeline-section">
@@ -78,61 +67,62 @@ function Education() {
   );
 }
 
-
-
+// ---------------- PROJECTS ----------------
 function Projects() {
   return (
-    <section className="py-20 px-6 md:px-16 bg-gray-100">
-      <h3 className="text-3xl font-bold mb-10">Projects</h3>
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="p-6 bg-white shadow rounded-xl">
-          <h4 className="text-xl font-semibold mb-2">Fitness Tracker App</h4>
-          <p className="text-gray-700">Android app using Jetpack Compose + Flow to track steps and workouts.</p>
+    <section className="projects-section">
+      <h3>Projects</h3>
+      <div className="projects-grid">
+        <div className="project-card">
+          <h4>Fitness Tracker App</h4>
+          <p>Android app using Jetpack Compose + Flow to track steps and workouts.</p>
         </div>
-        <div className="p-6 bg-white shadow rounded-xl">
-          <h4 className="text-xl font-semibold mb-2">Pawn Race Game</h4>
-          <p className="text-gray-700">C program implementing a fast pawn-only chess engine optimized for tournaments.</p>
+        <div className="project-card">
+          <h4>Pawn Race Game</h4>
+          <p>C program implementing a fast pawn-only chess engine optimized for tournaments.</p>
         </div>
-        <div className="p-6 bg-white shadow rounded-xl">
-          <h4 className="text-xl font-semibold mb-2">3D World Generator</h4>
-          <p className="text-gray-700">C++ + OpenGL project generating procedural terrain with custom rendering pipeline.</p>
+        <div className="project-card">
+          <h4>3D World Generator</h4>
+          <p>C++ + OpenGL project generating procedural terrain with custom rendering pipeline.</p>
         </div>
       </div>
     </section>
   );
 }
 
+// ---------------- MAIN LAYOUT ----------------
 export default function Portfolio() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
-        {/* Navbar */}
-        <header className="navbar">
-            {/* <h1 className="logo">Your Name</h1> */}
-            <nav className="nav-links">
-               <NavLink to="/" className="nav-link">Home</NavLink>
-                <NavLink to="/education" className="nav-link">Education</NavLink>
-                <NavLink to="/projects" className="nav-link">Projects</NavLink>
-            </nav>
-        </header>
+      <div className="app-layout">
+        {/* Sidebar */}
+        <aside className="sidebar">
+          <div className="profile">
+            <img src={pfp} alt="Profile" className="pfp" />
+            <h2 className="name">Jayce</h2>
+          </div>
+          <nav className="nav-links-vertical">
+            <NavLink to="/" className="nav-link">Home</NavLink>
+            <NavLink to="/education" className="nav-link">Education</NavLink>
+            <NavLink to="/projects" className="nav-link">Projects</NavLink>
+          </nav>
+        </aside>
 
+        {/* Main Content */}
+        <main className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-
-        {/* Contact bar */}
-      <div className="contact-bar">
-        <a href="mailto:jaycejefferson31@gmail.com">📧 Email</a>
-        <a href="https://github.com/your-github" target="_blank" rel="noreferrer">💻 GitHub</a>
-        <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
-      </div>
-
-        {/* <footer className="p-6 text-center text-gray-500 bg-gray-50">
-          © {new Date().getFullYear()} Your Name. All rights reserved.
-        </footer> */}
+          {/* Contact bar at bottom */}
+          <div className="contact-bar">
+            <a href="mailto:jaycejefferson31@gmail.com">📧 Email</a>
+            <a href="https://github.com/your-github" target="_blank" rel="noreferrer">💻 GitHub</a>
+            <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
+          </div>
+        </main>
       </div>
     </Router>
   );
