@@ -4,65 +4,89 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --bg-dark: #242424;
+  --bg-light: #ffffff;
+  --text-dark: #f9f9f9;
+  --text-light: #213547;
+  --accent: #2563eb; /* nice blue */
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-light);
+  color: var(--text-light);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Reset headings */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: flex-end; /* everything to the right */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* If you want the logo still on the left */
+.logo {
+  margin-right: auto; /* pushes links to the right */
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* Links container */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Individual links */
+.nav-link {
+  text-decoration: none;
+  color: var(--text-light);
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: color 0.2s ease-in-out;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* Active link */
+.nav-link.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
   }
-  a:hover {
-    color: #747bff;
+  .navbar {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
   }
-  button {
-    background-color: #f9f9f9;
+  .nav-link {
+    color: var(--text-dark);
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--accent);
   }
 }

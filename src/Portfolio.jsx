@@ -14,7 +14,7 @@ function Home() {
 
       {/* Right: Intro + About */}
       <div className="md:w-2/3 md:pl-12 text-center md:text-left">
-        <h2 className="text-4xl font-extrabold mb-4">Hi, I’m Your Name 👋</h2>
+        <h2 className="text-4xl font-extrabold mb-4">Hi, I’m Jayce 👋</h2>
         <p className="text-lg mb-6">
           Penultimate year Computing student at Imperial College London, seeking a
           Software Engineering Internship. Passionate about building efficient,
@@ -106,15 +106,16 @@ export default function Portfolio() {
     <Router>
       <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
         {/* Navbar */}
-        <header className="p-6 flex justify-between items-center shadow bg-white sticky top-0">
-          <h1 className="text-xl font-bold">Your Name</h1>
-          <nav className="space-x-6">
-            <Link to="/">Home</Link>
-            <Link to="/tech">Tech Stack</Link>
-            <Link to="/education">Education</Link>
-            <Link to="/projects">Projects</Link>
-          </nav>
+        <header className="navbar">
+            {/* <h1 className="logo">Your Name</h1> */}
+            <nav className="nav-links">
+                <Link to="/" className="nav-link">Home</Link>
+                <Link to="/tech" className="nav-link">Tech Stack</Link>
+                <Link to="/education" className="nav-link">Education</Link>
+                <Link to="/projects" className="nav-link">Projects</Link>
+            </nav>
         </header>
+
 
         <Routes>
           <Route path="/" element={<Home />} />
