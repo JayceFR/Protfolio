@@ -49,48 +49,59 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent);
 }
 
-/* Home section container */
+/* Home section */
 .home-section {
   display: flex;
-  flex-direction: column;        /* stacked by default on mobile */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5rem 1.5rem;
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .home-section {
-    flex-direction: row-reverse; /* on desktop: image right, text left */
-    padding: 5rem 4rem;
+    flex-direction: row-reverse;
+    align-items: center;       /* centers image with text vertically */
+    justify-content: space-between;
+    padding: 8rem 4rem;
   }
 }
 
 /* Profile picture */
 .pfp {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 2rem; /* spacing on mobile */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
   .pfp {
-    margin-bottom: 0; /* remove margin when side by side */
-    margin-left: 3rem; /* space between text and image */
+    margin-bottom: 0;
+    margin-left: 4rem;
   }
 }
 
-/* Text content */
+/* Text block */
 .home-text {
-  text-align: center;
+  max-width: 600px;
 }
 
-@media (min-width: 768px) {
-  .home-text {
-    text-align: left;
-  }
+.home-text h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.home-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #ccc; /* softer contrast in dark mode */
 }
 
 
