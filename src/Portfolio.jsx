@@ -1,32 +1,22 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
+import pfp from './assets/jayce_pfp.png'
 
 function Home() {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center py-20 px-6 md:px-16">
-      {/* Left: Profile picture */}
-      <div className="md:w-1/3 flex justify-center mb-8 md:mb-0">
-        <img
-          src="/your-photo.jpg"
-          alt="Your portrait"
-          className="rounded-2xl shadow-lg w-64 h-64 object-cover"
-        />
-      </div>
+    <section className="home-section">
+        <div className="home-text">
+            <h2>Hi, I’m Jayce 👋</h2>
+            <p>Penultimate year Computing student at Imperial College London, seeking a
+            Software Engineering Internship...</p>
+            <p>I’m a Computer Science student with experience in full-stack development...</p>
+        </div>
 
-      {/* Right: Intro + About */}
-      <div className="md:w-2/3 md:pl-12 text-center md:text-left">
-        <h2 className="text-4xl font-extrabold mb-4">Hi, I’m Jayce 👋</h2>
-        <p className="text-lg mb-6">
-          Penultimate year Computing student at Imperial College London, seeking a
-          Software Engineering Internship. Passionate about building efficient,
-          user-focused applications.
-        </p>
-        <p className="text-md text-gray-700">
-          I’m a Computer Science student with experience in full-stack development,
-          Android apps, and systems programming. Skilled in Kotlin, Python, C, and
-          JavaScript.
-        </p>
-      </div>
+        {/* Image Right */}
+        <div>
+            <img src={pfp} alt="Your portrait" className="pfp" />
+        </div>
     </section>
+
   );
 }
 
@@ -109,10 +99,10 @@ export default function Portfolio() {
         <header className="navbar">
             {/* <h1 className="logo">Your Name</h1> */}
             <nav className="nav-links">
-                <Link to="/" className="nav-link">Home</Link>
-                <Link to="/tech" className="nav-link">Tech Stack</Link>
-                <Link to="/education" className="nav-link">Education</Link>
-                <Link to="/projects" className="nav-link">Projects</Link>
+               <NavLink to="/" className="nav-link">Home</NavLink>
+                <NavLink to="/tech" className="nav-link">Tech Stack</NavLink>
+                <NavLink to="/education" className="nav-link">Education</NavLink>
+                <NavLink to="/projects" className="nav-link">Projects</NavLink>
             </nav>
         </header>
 

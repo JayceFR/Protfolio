@@ -8,7 +8,8 @@
   --bg-light: #ffffff;
   --text-dark: #f9f9f9;
   --text-light: #213547;
-  --accent: #2563eb; /* nice blue */
+  --accent: #2563eb; /* blue hover */
+  --highlight: #d4af37; /* gold for active */
 }
 
 body {
@@ -29,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Navbar container */
 .navbar {
   display: flex;
-  justify-content: flex-end; /* everything to the right */
+  justify-content: flex-end;
   align-items: center;
   padding: 1rem 2rem;
   background-color: var(--bg-light);
@@ -40,13 +41,58 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 50;
 }
 
-/* If you want the logo still on the left */
+/* Logo text */
 .logo {
-  margin-right: auto; /* pushes links to the right */
+  margin-right: auto;
   font-size: 1.25rem;
   font-weight: bold;
   color: var(--accent);
 }
+
+/* Home section container */
+.home-section {
+  display: flex;
+  flex-direction: column;        /* stacked by default on mobile */
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .home-section {
+    flex-direction: row-reverse; /* on desktop: image right, text left */
+    padding: 5rem 4rem;
+  }
+}
+
+/* Profile picture */
+.pfp {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem; /* spacing on mobile */
+}
+
+@media (min-width: 768px) {
+  .pfp {
+    margin-bottom: 0; /* remove margin when side by side */
+    margin-left: 3rem; /* space between text and image */
+  }
+}
+
+/* Text content */
+.home-text {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .home-text {
+    text-align: left;
+  }
+}
+
 
 /* Links container */
 .nav-links {
@@ -59,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   color: var(--text-light);
   font-weight: 500;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 
 .nav-link:hover {
@@ -68,8 +114,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Active link */
 .nav-link.active {
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent);
+  color: var(--highlight);
+  border-bottom: 2px solid var(--highlight);
 }
 
 /* Dark mode */
@@ -85,8 +131,11 @@ h1, h2, h3, h4, h5, h6 {
   .nav-link {
     color: var(--text-dark);
   }
-  .nav-link:hover,
-  .nav-link.active {
+  .nav-link:hover {
     color: var(--accent);
+  }
+  .nav-link.active {
+    color: var(--highlight);
+    border-bottom: 2px solid var(--highlight);
   }
 }
