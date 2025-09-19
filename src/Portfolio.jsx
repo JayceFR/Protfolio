@@ -9,6 +9,7 @@ import reactLogo from './assets/logos/react.svg'
 
 function Home() {
   return (
+    <>
     <section className="home-section">
       <div className="home-text">
         <h2>Hi, I’m Jayce 👋</h2>
@@ -38,6 +39,13 @@ function Home() {
         <img src={pfp} alt="Your portrait" className="pfp" />
       </div>
     </section>
+
+    <div className="contact-bar">
+        <a href="mailto:jaycejefferson31@gmail.com">📧 Email</a>
+        <a href="https://github.com/your-github" target="_blank" rel="noreferrer">💻 GitHub</a>
+        <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
+    </div>
+    </>
   );
 }
 
@@ -135,9 +143,9 @@ export default function Portfolio() {
           <Route path="/projects" element={<Projects />} />
         </Routes>
 
-        <footer className="p-6 text-center text-gray-500 bg-gray-50">
+        {/* <footer className="p-6 text-center text-gray-500 bg-gray-50">
           © {new Date().getFullYear()} Your Name. All rights reserved.
-        </footer>
+        </footer> */}
       </div>
     </Router>
   );
