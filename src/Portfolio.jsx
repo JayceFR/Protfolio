@@ -1,33 +1,54 @@
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom";
 import pfp from './assets/jayce_pfp.png'
+import kotlinLogo from './assets/logos/kotlin.svg'
+import haskellLogo from './assets/logos/haskell.svg'
+import pythonLogo from './assets/logos/python.svg'
+import cLogo from './assets/logos/c.png'
+import jsLogo from './assets/logos/js.svg'
+import reactLogo from './assets/logos/react.svg'
 
 function Home() {
   return (
     <section className="home-section">
-        <div className="home-text">
-            <h2>Hi, I’m Jayce 👋</h2>
-            <p>Penultimate year Computing student at Imperial College London, seeking a
-            Software Engineering Internship...</p>
-            <p>I’m a Computer Science student with experience in full-stack development...</p>
-        </div>
+      <div className="home-text">
+        <h2>Hi, I’m Jayce 👋</h2>
+        <p>
+          Penultimate year Computing student at Imperial College London, seeking a
+          Software Engineering Internship...
+        </p>
+        <p>
+          I have experience in full-stack development, mobile development and game
+          development.
+        </p>
 
-        {/* Image Right */}
-        <div>
-            <img src={pfp} alt="Your portrait" className="pfp" />
+        {/* Tech stack logos */}
+        <div className="tech-stack">
+            <img src={cLogo} alt="C" />
+            <img src={kotlinLogo} alt="Kotlin" />
+            <img src={haskellLogo} alt="Haskell" />
+            <img src={pythonLogo} alt="Python" />
+            <img src={jsLogo} alt="JavaScript" />
+            <img src={reactLogo} alt="React" />
+
         </div>
+      </div>
+
+      {/* Image Right */}
+      <div>
+        <img src={pfp} alt="Your portrait" className="pfp" />
+      </div>
     </section>
-
   );
 }
 
 function TechStack() {
   const logos = [
-    { name: "Kotlin", src: "/logos/kotlin.svg" },
+    { name: "Kotlin", src: kotlinLogo },
+    { name: "Haskell", src: "/logos/haskell.svg" },
     { name: "Python", src: "/logos/python.svg" },
     { name: "C", src: "/logos/c.svg" },
     { name: "JavaScript", src: "/logos/javascript.svg" },
     { name: "React", src: "/logos/react.svg" },
-    { name: "Tailwind", src: "/logos/tailwind.svg" },
   ];
   return (
     <section className="py-20 px-6 md:px-16 text-center">

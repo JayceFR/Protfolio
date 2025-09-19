@@ -69,6 +69,27 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Tech stack logos */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.tech-stack img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+.tech-stack img:hover {
+  transform: scale(1.2);
+}
+
+
 /* Profile picture */
 .pfp {
   border-radius: 50%;
