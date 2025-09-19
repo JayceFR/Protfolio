@@ -40,13 +40,6 @@ function Home() {
           <img src={pfp} alt="Your portrait" className="pfp" />
         </div>
       </section>
-
-      {/* Contact bar */}
-      <div className="contact-bar">
-        <a href="mailto:jaycejefferson31@gmail.com">📧 Email</a>
-        <a href="https://github.com/your-github" target="_blank" rel="noreferrer">💻 GitHub</a>
-        <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
-      </div>
     </>
   );
 }
@@ -54,28 +47,38 @@ function Home() {
 
 function Education() {
   return (
-    <section className="py-20 px-6 md:px-16">
-      <h3 className="text-3xl font-bold mb-6">Education & Experience</h3>
-      <ul className="space-y-6">
+    <section className="timeline-section">
+      <h3>Education</h3>
+      <ul className="timeline">
         <li>
-          <h4 className="text-xl font-semibold">Imperial College London</h4>
-          <p className="text-gray-700">BSc Computing (2023 – 2026)</p>
+          <h4>Imperial College London</h4>
+          <p>BSc Computing (2023 – 2026)</p>
         </li>
         <li>
-          <h4 className="text-xl font-semibold">Tutor (Part-time)</h4>
-          <p className="text-gray-700">
+          <h4>High School / A-levels</h4>
+          <p>Mathematics, Computer Science, Physics (add your details)</p>
+        </li>
+      </ul>
+
+      <h3 className="mt-16">Experience</h3>
+      <ul className="timeline">
+        <li>
+          <h4>Tutor (Part-time)</h4>
+          <p>
             Provided one-to-one tutoring in Computer Science and Maths, emphasizing
             problem solving and clear communication.
           </p>
         </li>
         <li>
-          <h4 className="text-xl font-semibold">Industry Experience</h4>
-          <p className="text-gray-700">Internship / freelance experiences (add yours here)</p>
+          <h4>Industry Experience</h4>
+          <p>Internship / freelance experiences (add yours here)</p>
         </li>
       </ul>
     </section>
   );
 }
+
+
 
 function Projects() {
   return (
@@ -119,6 +122,13 @@ export default function Portfolio() {
           <Route path="/education" element={<Education />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
+
+        {/* Contact bar */}
+      <div className="contact-bar">
+        <a href="mailto:jaycejefferson31@gmail.com">📧 Email</a>
+        <a href="https://github.com/your-github" target="_blank" rel="noreferrer">💻 GitHub</a>
+        <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
+      </div>
 
         {/* <footer className="p-6 text-center text-gray-500 bg-gray-50">
           © {new Date().getFullYear()} Your Name. All rights reserved.

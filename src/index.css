@@ -34,7 +34,7 @@ body::before {
   height: 100vh;
   background: linear-gradient(270deg, #2563eb, #d4af37, #2563eb);
   background-size: 600% 600%;
-  animation: gradientMove 15s ease infinite;
+  /* animation: gradientMove 15s ease infinite; */
   z-index: -1; /* behind everything */
   filter: blur(120px) opacity(0.3);
 }
@@ -109,11 +109,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-@keyframes gradientMove {
+/* @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
+} */
 
 /* Text block */
 .home-text {
@@ -288,5 +288,131 @@ h1, h2, h3, h4, h5, h6 {
   .contact-bar {
     background: rgba(27,27,27,0.85);
     color: var(--text-dark);
+  }
+}
+
+
+
+/* ------------------- TIMELINE SECTION ------------------- */
+.timeline-section {
+  position: relative;
+  padding: 6rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05); /* frosted effect */
+  border-radius: 30px;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.25);
+  z-index: 1;
+}
+
+/* Gradient behind section */
+.timeline-section::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background: linear-gradient(270deg, #2563eb, #d4af37, #2563eb); */
+  background-size: 600% 600%;
+  /* animation: gradientMove 20s ease infinite; */
+  z-index: -1;
+  filter: blur(200px) opacity(0.3);
+}
+
+/* Section headings */
+.timeline-section h3 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--highlight);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  margin-left: 0;
+  padding-left: 0;
+  border-left: 3px solid var(--highlight);
+}
+
+/* Timeline items as floating cards */
+.timeline li {
+  position: relative;
+  margin-bottom: 3rem;
+  list-style: none;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.timeline li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+/* Fade-in animation for timeline items */
+.timeline li:nth-child(1) { animation-delay: 0.1s; }
+.timeline li:nth-child(2) { animation-delay: 0.3s; }
+.timeline li:nth-child(3) { animation-delay: 0.5s; }
+.timeline li:nth-child(4) { animation-delay: 0.7s; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Timeline node (circle) */
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: -1.3rem;
+  top: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--highlight);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 12px var(--highlight);
+}
+
+/* Timeline content */
+.timeline li h4 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--highlight);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.timeline li p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .timeline {
+    margin-left: 2rem;
+    padding-left: 2rem;
+  }
+
+  .timeline li::before {
+    left: -1.5rem;
+    top: 1.8rem;
+    width: 1.3rem;
+    height: 1.3rem;
   }
 }
