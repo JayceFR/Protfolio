@@ -4,6 +4,10 @@ import terrain2Gif from '../assets/projects/terrain2.gif'
 import terrain3Gif from '../assets/projects/terrain3.gif'
 import terrain4Gif from '../assets/projects/terrain4.gif'
 
+import eyespyGif from '../assets/projects/eyespy.gif'
+import eyespy2 from '../assets/projects/eyespy2.png'
+import eyespy3 from '../assets/projects/eyespy3.gif'
+
 export default function Projects() {
   const projects = [
     {
@@ -21,15 +25,18 @@ export default function Projects() {
     ]
     },
     {
-      title: "Fitness Tracker App",
-      description: "Android app using Jetpack Compose + Flow to track steps and workouts.",
-      techstack: "Tech Stack: C, OpenGL, GLFW, Mediapipe, Python",
-      image: "/images/fitness-app.png",
-      demo: "https://youtu.be/demo-video",
-      repo: "https://github.com/username/fitness-tracker",
-      store: "https://play.google.com/store/apps/details?id=fitness.tracker",
-      dataImages: [],
-      dataText: []
+        title: "EyeSpy – Mobile Security App",
+        description: "Android security application that automatically detects and captures images of potential intruders, securely sending alerts and photos directly to your email.",
+        techstack: "Tech Stack: Kotlin, Jetpack Compose, Flow, Google Sign-In, On-Device ML",
+        image: eyespyGif,
+        repo: "https://github.com/JayceFR/StepShadower",
+        store: "https://play.google.com/store/apps/details?id=eye.spy",
+        dataImages: [eyespy2, eyespy3],
+        dataText: [
+        "Features a built-in personal assistant powered by on-device machine learning, allowing users to easily configure capture settings and security preferences.",
+        "Seamlessly integrated with Google Account sign-in for secure authentication and user management. Intruder alerts and captured images are sent directly from the user’s authenticated Google account."
+        ]
+
     },
     {
       title: "Pawn Race Game",
