@@ -8,6 +8,8 @@ import eyespyGif from '../assets/projects/eyespy.gif'
 import eyespy2 from '../assets/projects/eyespy2.png'
 import eyespy3 from '../assets/projects/eyespy3.gif'
 
+import popnik from '../assets/projects/popnik.gif'
+
 export default function Projects() {
   const projects = [
     {
@@ -39,10 +41,10 @@ export default function Projects() {
 
     },
     {
-      title: "Pawn Race Game",
-      description: "C program implementing a fast pawn-only chess engine optimized for tournaments.",
-      techstack: "Tech Stack: C, OpenGL, GLFW, Mediapipe, Python",
-      image: "/images/pawn-race.png",
+      title: "Popnik - Mobile game",
+      description: "A mobile game that challenges players to navigate a series of procedurally generated levels defeating enemies and hacking computers!",
+      techstack: "Tech Stack: C, Raylib, GLSL",
+      image: popnik,
       demo: "https://youtu.be/demo-video",
       repo: "https://github.com/username/pawn-race",
       store: "https://itch.io/game/pawn-race",
