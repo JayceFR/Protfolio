@@ -106,35 +106,45 @@ html, body, #root {
 /* ------------------- MAIN CONTENT ------------------- */
 .content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes contact bar down */
   padding: 3rem 2rem;
   overflow-y: auto;
 }
 
-/* Home section */
+/* Home section centered without overflow */
 .home-section {
+  flex: 1; /* take up remaining space in content */
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   gap: 2rem;
-  flex-wrap: wrap;
 }
+
 .home-text {
-  max-width: 650px;
+  max-width: 700px;
 }
+
 .home-text h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
+
+.tech-stack {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
 .intro {
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
-.tech-stack {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
+
 .tech-stack img {
   height: 40px;
   margin: 0.5rem 0.8rem 0.5rem 0;
@@ -181,17 +191,30 @@ html, body, #root {
 
 /* Contact bar */
 .contact-bar {
-  margin-top: 3rem;
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-20%);
+  background: var(--bg-dark);
+  color: var(--text-dark);
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  transition: background 0.3s ease, color 0.3s ease;
 }
+
 .contact-bar a {
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--text-dark);
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
+
 .contact-bar a:hover {
   color: var(--highlight);
+  transform: translateY(-3px);
 }
