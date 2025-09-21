@@ -6,7 +6,7 @@ import pythonLogo from './assets/logos/python.svg'
 import cLogo from './assets/logos/c.png'
 import jsLogo from './assets/logos/js.svg'
 import reactLogo from './assets/logos/react.svg'
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // ---------------- HOME ----------------
 function Home() {
@@ -90,32 +90,46 @@ function Education() {
 }
 
 
-// ---------------- PROJECTS ----------------
 function Projects() {
   const projects = [
     {
       title: "Fitness Tracker App",
       description: "Android app using Jetpack Compose + Flow to track steps and workouts.",
-      image: "/images/fitness-app.png", // replace with your actual image path
+      image: "/images/fitness-app.png",
+      demo: "https://youtu.be/demo-video",
+      repo: "https://github.com/username/fitness-tracker",
+      store: "https://play.google.com/store/apps/details?id=fitness.tracker",
     },
     {
       title: "Pawn Race Game",
       description: "C program implementing a fast pawn-only chess engine optimized for tournaments.",
       image: "/images/pawn-race.png",
+      demo: "https://youtu.be/demo-video",
+      repo: "https://github.com/username/pawn-race",
+      store: "https://itch.io/game/pawn-race",
     },
     {
       title: "3D World Generator",
       description: "C++ + OpenGL project generating procedural terrain with custom rendering pipeline.",
       image: "/images/3d-world.png",
+      demo: "https://youtu.be/demo-video",
+      repo: "https://github.com/username/3d-world-generator",
+      store: "",
     },
   ];
+
+  const [selectedProject, setSelectedProject] = useState(null);
 
   return (
     <section className="projects-section">
       <h3>Projects</h3>
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <div className="project-card" key={index}>
+          <div
+            className="project-card"
+            key={index}
+            onClick={() => setSelectedProject(project)}
+          >
             <div className="project-image">
               <img src={project.image} alt={project.title} />
             </div>
@@ -124,6 +138,32 @@ function Projects() {
           </div>
         ))}
       </div>
+
+      {selectedProject && (
+        <div className="project-popup">
+          <button className="close-btn" onClick={() => setSelectedProject(null)}>×</button>
+          <h2>{selectedProject.title}</h2>
+          <div className="popup-image">
+            <img src={selectedProject.image} alt={selectedProject.title} />
+          </div>
+          <p>{selectedProject.description}</p>
+          {selectedProject.demo && (
+            <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
+              Watch Demo
+            </a>
+          )}
+          {selectedProject.repo && (
+            <a href={selectedProject.repo} target="_blank" rel="noopener noreferrer">
+              View Repository
+            </a>
+          )}
+          {selectedProject.store && (
+            <a href={selectedProject.store} target="_blank" rel="noopener noreferrer">
+              {selectedProject.store.includes("play.google") ? "Play Store" : "Itch.io"}
+            </a>
+          )}
+        </div>
+      )}
     </section>
   );
 }
@@ -139,11 +179,59 @@ export default function Portfolio() {
 }
 
 function Layout() {
-  const location = useLocation(); // ✅ get current location
+  const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <div className="app-layout">
-      {/* Sidebar */}
+      {/* Mobile Header */}
+      <header className="mobile-header">
+        <div className="mobile-header-content">
+          <div className="mobile-profile">
+            <img src={pfp} alt="Profile" className="mobile-pfp" />
+            <span className="mobile-name">Jayce</span>
+          </div>
+          <button className="hamburger" onClick={toggleMobileMenu}>
+            ☰
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`} onClick={closeMobileMenu}>
+        <div className="mobile-menu-content" onClick={(e) => e.stopPropagation()}>
+          <div className="mobile-menu-header">
+            <button className="mobile-close" onClick={closeMobileMenu}>
+              ×
+            </button>
+          </div>
+          <div className="mobile-menu-profile">
+            <img src={pfp} alt="Profile" className="mobile-menu-pfp" />
+            <div className="mobile-menu-name">Jayce</div>
+          </div>
+          <nav className="mobile-nav-links">
+            <NavLink to="/" className="mobile-nav-link" onClick={closeMobileMenu}>
+              Home
+            </NavLink>
+            <NavLink to="/education" className="mobile-nav-link" onClick={closeMobileMenu}>
+              Education
+            </NavLink>
+            <NavLink to="/projects" className="mobile-nav-link" onClick={closeMobileMenu}>
+              Projects
+            </NavLink>
+          </nav>
+        </div>
+      </div>
+
+      {/* Desktop Sidebar */}
       <aside className="sidebar">
         <div className="profile">
           <img src={pfp} alt="Profile" className="pfp" />
@@ -157,7 +245,6 @@ function Layout() {
       </aside>
 
       {/* Main Content */}
-      {/* Using `key={location.pathname}` forces remount on route change */}
       <main className="content" key={location.pathname}>
         <Routes location={location}>
           <Route path="/" element={<Home />} />
