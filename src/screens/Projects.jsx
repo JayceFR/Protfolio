@@ -30,11 +30,10 @@ export default function Projects() {
     },
     {
       title: "3D World Generator",
-      description: "C++ + OpenGL project generating procedural terrain with custom rendering pipeline.",
+      description: "Procedural terrain generation with OpenGL, controlled via webcam facial tracking.",
       techstack: "Tech Stack: C, OpenGL, GLFW, Mediapipe, Python",
       image: terrainGif,
-      demo: "https://youtu.be/demo-video",
-      repo: "https://github.com/username/3d-world-generator",
+      repo: "https://github.com/JayceFR/VisionTerrain",
       store: "",
       dataImages: [terrain2Gif, terrain3Gif, terrain4Gif],
       dataText: [
