@@ -249,6 +249,27 @@ html, body, #root {
   box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
 }
 
+/* Timeline role details */
+.timeline li ul {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  list-style-type: disc;
+  color: rgba(255, 255, 255, 0.8); /* softer white for readability */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.timeline li ul li {
+  margin-bottom: 0.4rem;
+  transition: color 0.3s ease;
+}
+
+.timeline li ul li:hover {
+  color: var(--highlight); /* gold highlight on hover */
+}
+
+
 /* Headings inside boxes */
 .timeline h4 {
   font-size: 1.2rem;
