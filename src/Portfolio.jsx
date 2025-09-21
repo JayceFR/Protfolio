@@ -37,35 +37,40 @@ function Home() {
 function Education() {
   return (
     <section className="timeline-section">
-      <h3>Education</h3>
-      <ul className="timeline">
-        <li>
-          <h4>Imperial College London</h4>
-          <p>BSc Computing (2023 – 2026)</p>
-        </li>
-        <li>
-          <h4>High School / A-levels</h4>
-          <p>Mathematics, Computer Science, Physics (add your details)</p>
-        </li>
-      </ul>
+      <div className="timeline-box">
+        <h3>Education</h3>
+        <ul className="timeline">
+          <li>
+            <h4>Imperial College London</h4>
+            <p>BSc Computing (2023 – 2026)</p>
+          </li>
+          <li>
+            <h4>High School / A-levels</h4>
+            <p>Mathematics, Computer Science, Physics (add your details)</p>
+          </li>
+        </ul>
+      </div>
 
-      <h3 className="mt-16">Experience</h3>
-      <ul className="timeline">
-        <li>
-          <h4>Tutor (Part-time)</h4>
-          <p>
-            Provided one-to-one tutoring in Computer Science and Maths, emphasizing
-            problem solving and clear communication.
-          </p>
-        </li>
-        <li>
-          <h4>Industry Experience</h4>
-          <p>Internship / freelance experiences (add yours here)</p>
-        </li>
-      </ul>
+      <div className="timeline-box">
+        <h3>Experience</h3>
+        <ul className="timeline">
+          <li>
+            <h4>Tutor (Part-time)</h4>
+            <p>
+              Provided one-to-one tutoring in Computer Science and Maths,
+              emphasizing problem solving and clear communication.
+            </p>
+          </li>
+          <li>
+            <h4>Industry Experience</h4>
+            <p>Internship / freelance experiences (add yours here)</p>
+          </li>
+        </ul>
+      </div>
     </section>
   );
 }
+
 
 // ---------------- PROJECTS ----------------
 function Projects() {

@@ -137,7 +137,7 @@ html, body, #root {
 }
 
 /* Text fade effect */
-.content > * {
+/* .content > * {
   animation: textFade 4s ease forwards;
 }
 
@@ -148,7 +148,7 @@ html, body, #root {
   100% {
     color: var(--text-light);
   }
-}
+} */
 
 
 
@@ -197,21 +197,71 @@ html, body, #root {
 }
 
 /* Timeline */
+/* Timeline container */
 .timeline {
   list-style: none;
   padding: 0;
   margin: 1.5rem 0;
-  border-left: 3px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-left: none; /* remove old vertical line */
 }
+
+.timeline-box {
+  background: rgba(0, 0, 0, 0.7); /* translucent black */
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px); /* glassy effect with the gold behind */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* hover glow */
+.timeline-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 32px rgba(212, 175, 55, 0.35);
+}
+
+/* section headings */
+.timeline-box h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--highlight);
+  text-align: center;
+}
+
+
+/* Each box (education/experience) */
 .timeline li {
-  margin: 1.5rem 0;
-  padding-left: 1rem;
+  background: rgba(0, 0, 0, 0.7); /* black with subtle transparency */
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
+
+/* Hover effect: lift slightly + golden glow */
+.timeline li:hover {
+  transform: translateY(-4px);
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+}
+
+/* Headings inside boxes */
 .timeline h4 {
   font-size: 1.2rem;
-  margin-bottom: 0.3rem;
-  color: var(--accent);
+  margin-bottom: 0.4rem;
+  color: var(--highlight); /* gold for emphasis */
 }
+
+/* Text inside boxes */
+.timeline p {
+  font-size: 1rem;
+  color: var(--text-dark); /* ensure readability on dark background */
+}
+
 
 /* Projects */
 .projects-grid {
