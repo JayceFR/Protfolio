@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import terrainGif from '../assets/projects/terrain.gif'
 import terrain2Gif from '../assets/projects/terrain2.gif'
 import terrain3Gif from '../assets/projects/terrain3.gif'
+import terrain4Gif from '../assets/projects/terrain4.gif'
 
 export default function Projects() {
   const projects = [
     {
       title: "Fitness Tracker App",
       description: "Android app using Jetpack Compose + Flow to track steps and workouts.",
+      techstack: "Tech Stack: C, OpenGL, GLFW, Mediapipe, Python",
       image: "/images/fitness-app.png",
       demo: "https://youtu.be/demo-video",
       repo: "https://github.com/username/fitness-tracker",
@@ -18,6 +20,7 @@ export default function Projects() {
     {
       title: "Pawn Race Game",
       description: "C program implementing a fast pawn-only chess engine optimized for tournaments.",
+      techstack: "Tech Stack: C, OpenGL, GLFW, Mediapipe, Python",
       image: "/images/pawn-race.png",
       demo: "https://youtu.be/demo-video",
       repo: "https://github.com/username/pawn-race",
@@ -28,12 +31,18 @@ export default function Projects() {
     {
       title: "3D World Generator",
       description: "C++ + OpenGL project generating procedural terrain with custom rendering pipeline.",
+      techstack: "Tech Stack: C, OpenGL, GLFW, Mediapipe, Python",
       image: terrainGif,
       demo: "https://youtu.be/demo-video",
       repo: "https://github.com/username/3d-world-generator",
       store: "",
-      dataImages: [terrain2Gif, terrain3Gif],
-      dataText: ["Procedural terrain generation with Perlin noise. Implemented a chunking system to efficiently manage and render large terrains.", "Can be explored by tracking facial data from webcam!", "Custom OpenGL rendering pipeline with shaders for realistic lighting and textures.", "Added custom physics as well."]
+      dataImages: [terrain2Gif, terrain3Gif, terrain4Gif],
+      dataText: [
+        "Procedural terrain generation driven by Perlin noise, with the world divided into chunks (each made of 16x16 blocks). This chunking system allows efficient rendering by only processing visible sections of the terrain, significantly improving performance.",
+        "The environment can be navigated through an alternative interaction method: camera movement controlled by tracking facial data from a webcam. This approach was motivated by accessibility concerns, offering a hands-free alternative to traditional mouse input.",
+        "Developed a custom OpenGL rendering pipeline with multiple shaders to achieve realistic visuals. Shaders were used for terrain rendering, animating fireflies, and simulating water with noise-based displacement and sine-wave oscillations, creating convincing lighting and surface effects."
+    ]
+
     },
   ];
 
@@ -66,6 +75,7 @@ export default function Projects() {
       <img src={selectedProject.image} alt={selectedProject.title} />
     </div>
     <p>{selectedProject.description}</p>
+    <p><em>{selectedProject.techstack}</em></p>
 
     {selectedProject.demo && (
           <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
@@ -83,8 +93,6 @@ export default function Projects() {
           </a>
         )}
 
-        {/* Alternate between images and text */}
-        {/* Alternate between images and text in a box */}
         {Array.from(
           { length: Math.max(selectedProject.dataImages.length, selectedProject.dataText.length) },
           (_, idx) => (
