@@ -92,26 +92,42 @@ function Education() {
 
 // ---------------- PROJECTS ----------------
 function Projects() {
+  const projects = [
+    {
+      title: "Fitness Tracker App",
+      description: "Android app using Jetpack Compose + Flow to track steps and workouts.",
+      image: "/images/fitness-app.png", // replace with your actual image path
+    },
+    {
+      title: "Pawn Race Game",
+      description: "C program implementing a fast pawn-only chess engine optimized for tournaments.",
+      image: "/images/pawn-race.png",
+    },
+    {
+      title: "3D World Generator",
+      description: "C++ + OpenGL project generating procedural terrain with custom rendering pipeline.",
+      image: "/images/3d-world.png",
+    },
+  ];
+
   return (
     <section className="projects-section">
       <h3>Projects</h3>
       <div className="projects-grid">
-        <div className="project-card">
-          <h4>Fitness Tracker App</h4>
-          <p>Android app using Jetpack Compose + Flow to track steps and workouts.</p>
-        </div>
-        <div className="project-card">
-          <h4>Pawn Race Game</h4>
-          <p>C program implementing a fast pawn-only chess engine optimized for tournaments.</p>
-        </div>
-        <div className="project-card">
-          <h4>3D World Generator</h4>
-          <p>C++ + OpenGL project generating procedural terrain with custom rendering pipeline.</p>
-        </div>
+        {projects.map((project, index) => (
+          <div className="project-card" key={index}>
+            <div className="project-image">
+              <img src={project.image} alt={project.title} />
+            </div>
+            <h4>{project.title}</h4>
+            <p>{project.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
+
 
 // ---------------- MAIN LAYOUT ----------------
 export default function Portfolio() {
