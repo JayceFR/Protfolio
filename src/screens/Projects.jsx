@@ -7,6 +7,20 @@ import terrain4Gif from '../assets/projects/terrain4.gif'
 export default function Projects() {
   const projects = [
     {
+      title: "3D World Generator",
+      description: "Procedural terrain generation with OpenGL, controlled via webcam facial tracking.",
+      techstack: "Tech Stack: C, OpenGL, GLFW, Mediapipe, Python",
+      image: terrainGif,
+      repo: "https://github.com/JayceFR/VisionTerrain",
+      store: "",
+      dataImages: [terrain2Gif, terrain3Gif, terrain4Gif],
+      dataText: [
+        "Procedural terrain generation driven by Perlin noise, with the world divided into chunks (each made of 16x16 blocks). This chunking system allows efficient rendering by only processing visible sections of the terrain, significantly improving performance.",
+        "The environment can be navigated through an alternative interaction method: camera movement controlled by tracking facial data from a webcam. This approach was motivated by accessibility concerns, offering a hands-free alternative to traditional mouse input.",
+        "Developed a custom OpenGL rendering pipeline with multiple shaders to achieve realistic visuals. Shaders were used for terrain rendering, animating fireflies, and simulating water with noise-based displacement and sine-wave oscillations, creating convincing lighting and surface effects."
+    ]
+    },
+    {
       title: "Fitness Tracker App",
       description: "Android app using Jetpack Compose + Flow to track steps and workouts.",
       techstack: "Tech Stack: C, OpenGL, GLFW, Mediapipe, Python",
@@ -27,21 +41,6 @@ export default function Projects() {
       store: "https://itch.io/game/pawn-race",
       dataImages: [],
       dataText: []
-    },
-    {
-      title: "3D World Generator",
-      description: "Procedural terrain generation with OpenGL, controlled via webcam facial tracking.",
-      techstack: "Tech Stack: C, OpenGL, GLFW, Mediapipe, Python",
-      image: terrainGif,
-      repo: "https://github.com/JayceFR/VisionTerrain",
-      store: "",
-      dataImages: [terrain2Gif, terrain3Gif, terrain4Gif],
-      dataText: [
-        "Procedural terrain generation driven by Perlin noise, with the world divided into chunks (each made of 16x16 blocks). This chunking system allows efficient rendering by only processing visible sections of the terrain, significantly improving performance.",
-        "The environment can be navigated through an alternative interaction method: camera movement controlled by tracking facial data from a webcam. This approach was motivated by accessibility concerns, offering a hands-free alternative to traditional mouse input.",
-        "Developed a custom OpenGL rendering pipeline with multiple shaders to achieve realistic visuals. Shaders were used for terrain rendering, animating fireflies, and simulating water with noise-based displacement and sine-wave oscillations, creating convincing lighting and surface effects."
-    ]
-
     },
   ];
 
