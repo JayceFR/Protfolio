@@ -108,21 +108,63 @@ html, body, #root {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* pushes contact bar down */
+  justify-content: space-between;
   padding: 3rem 2rem;
   overflow-y: auto;
+  position: relative;
+
+  /* Gradient is dark on the left, gold on the right */
+  background: linear-gradient(
+    120deg,
+    var(--bg-dark) 0%,
+    var(--bg-dark) 20%,
+    #3a3525 40%,
+    #b89d2a 70%,
+    #d4af37 100%
+  );
+  background-size: 200% 100%; /* extra room to slide */
+  background-position: 0% 50%;
+  animation: contentSlide 4s ease forwards;
 }
 
-/* Home section centered without overflow */
+@keyframes contentSlide {
+  0% {
+    background-position: 0% 50%; /* start with mostly dark */
+  }
+  100% {
+    background-position: 100% 50%; /* end with mostly gold */
+  }
+}
+
+/* Text fade effect */
+.content > * {
+  animation: textFade 4s ease forwards;
+}
+
+@keyframes textFade {
+  0% {
+    color: white;
+  }
+  100% {
+    color: var(--text-light);
+  }
+}
+
+
+
+
 .home-section {
-  flex: 1; /* take up remaining space in content */
+  position: relative;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 2rem;
+  overflow: hidden;
 }
+
 
 .home-text {
   max-width: 700px;
