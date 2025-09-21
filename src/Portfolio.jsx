@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from "react-router-dom";
 import pfp from './assets/jayce_pfp.png'
 import kotlinLogo from './assets/logos/kotlin.svg'
 import haskellLogo from './assets/logos/haskell.svg'
@@ -117,36 +117,44 @@ function Projects() {
 export default function Portfolio() {
   return (
     <Router>
-      <div className="app-layout">
-        {/* Sidebar */}
-        <aside className="sidebar">
-          <div className="profile">
-            <img src={pfp} alt="Profile" className="pfp" />
-            <h2 className="name">Jayce</h2>
-          </div>
-          <nav className="nav-links-vertical">
-            <NavLink to="/" className="nav-link">Home</NavLink>
-            <NavLink to="/education" className="nav-link">Education</NavLink>
-            <NavLink to="/projects" className="nav-link">Projects</NavLink>
-          </nav>
-        </aside>
-
-        {/* Main Content */}
-        <main className="content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/projects" element={<Projects />} />
-          </Routes>
-
-          {/* Contact bar at bottom */}
-          <div className="contact-bar">
-            <a href="mailto:jaycejefferson31@gmail.com">📧 Email</a>
-            <a href="https://github.com/your-github" target="_blank" rel="noreferrer">💻 GitHub</a>
-            <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
-          </div>
-        </main>
-      </div>
+      <Layout />
     </Router>
+  );
+}
+
+function Layout() {
+  const location = useLocation(); // ✅ get current location
+
+  return (
+    <div className="app-layout">
+      {/* Sidebar */}
+      <aside className="sidebar">
+        <div className="profile">
+          <img src={pfp} alt="Profile" className="pfp" />
+          <h2 className="name">Jayce</h2>
+        </div>
+        <nav className="nav-links-vertical">
+          <NavLink to="/" className="nav-link">Home</NavLink>
+          <NavLink to="/education" className="nav-link">Education</NavLink>
+          <NavLink to="/projects" className="nav-link">Projects</NavLink>
+        </nav>
+      </aside>
+
+      {/* Main Content */}
+      {/* Using `key={location.pathname}` forces remount on route change */}
+      <main className="content" key={location.pathname}>
+        <Routes location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
+
+        <div className="contact-bar">
+          <a href="mailto:jaycejefferson31@gmail.com">📧 Email</a>
+          <a href="https://github.com/your-github" target="_blank" rel="noreferrer">💻 GitHub</a>
+          <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
+        </div>
+      </main>
+    </div>
   );
 }
