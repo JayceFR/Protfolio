@@ -34,6 +34,10 @@ import acorns from '../assets/projects/acorns.gif'
 
 import minoy from '../assets/projects/minoy.png'
 
+import trobbit from '../assets/projects/trobbit.gif'
+
+import comali from '../assets/projects/comali.gif'
+
 export default function Projects() {
   const projects = [
     {
@@ -164,6 +168,16 @@ export default function Projects() {
       repo: "https://github.com/JayceFR/Minoy",
       demo: "https://www.youtube.com/watch?v=rHwOz10aiPM",
       store : "https://vicious-jayjan.itch.io/minoy",
+      dataImages: [],
+      dataText: []
+    },
+    {
+      title: "Trobbit",
+      description: "Game submitted to the Pygame Community Easter Jam 2023", 
+      techstack: "Tech Stack: Python, Pygame",
+      image: trobbit,
+      repo: "https://github.com/JayceFR/Trobbit",
+      store : "https://vicious-jayjan.itch.io/trobbit",
       dataImages: [],
       dataText: []
     },
