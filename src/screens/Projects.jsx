@@ -18,6 +18,10 @@ import pawnrace3 from '../assets/projects/pawnrace3.gif'
 import musicify from '../assets/projects/musicify.gif'
 import musicify2 from '../assets/projects/musicify2.gif'
 
+import projectile from '../assets/projects/projectile.gif'
+import projectile2 from '../assets/projects/projectile2.gif'
+import projectile3 from '../assets/projects/projectile3.gif'
+
 export default function Projects() {
   const projects = [
     {
@@ -82,6 +86,19 @@ export default function Projects() {
         "Supports playlists, shuffle, repeat, and background playback."
       ]
     },
+    {
+      title: "Projectile - BPHO Project",
+      description: "A website developed for the British Physics Computational Olympiad (BPHO) Secured Gold Award. Renders projectiles computed based on user-defined parameters.",
+      techstack: "Tech Stack: React, GLSL, Three.js, Node.js, Github Pages",
+      image: projectile,
+      repo: "https://github.com/JayceFR/Projectile",
+      demo: "https://jaycefr.github.io/Projectile/",
+      dataImages: [projectile2, projectile3],
+      dataText: [
+        "Supports real time rendering of projectiles in graphs based on user-defined parameters. Immediate visual feedback allows users to understand the effects of different parameters on projectile motion.",
+        "Features 3 different celestial bodies (Earth, Moon, Mars) with accurate gravitational forces, allowing users to simulate projectile motion in different environments."
+      ]
+    },
 
   ];
 
@@ -118,7 +135,7 @@ export default function Projects() {
 
     {selectedProject.demo && (
           <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
-            Watch Demo
+            {selectedProject.demo.includes("youtube") ? "Watch Demo" : "Live Site"}
           </a>
         )}
         {selectedProject.repo && (
