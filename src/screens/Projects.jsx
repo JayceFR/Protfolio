@@ -38,6 +38,8 @@ import trobbit from '../assets/projects/trobbit.gif'
 
 import comali from '../assets/projects/comali.gif'
 
+import vampy from '../assets/projects/vampy.gif'
+
 export default function Projects() {
   const projects = [
     {
@@ -189,6 +191,16 @@ export default function Projects() {
       repo: "https://github.com/JayceFR/Cozy_Comali",
       store : "https://vicious-jayjan.itch.io/cozy-comali",
       demo : "https://www.youtube.com/watch?v=QQwoFLNwITE",
+      dataImages: [],
+      dataText: []
+    },
+    {
+      title: "Vampy",
+      description: "Game submitted to the Mini Jam 118 : Vampires", 
+      techstack: "Tech Stack: Python, Pygame",
+      image: vampy,
+      repo: "https://github.com/JayceFR/Vampy",
+      store : "https://github.com/JayceFR/Vampy",
       dataImages: [],
       dataText: []
     },
