@@ -92,8 +92,8 @@ function Layout() {
 
         <div className="contact-bar">
           <a href="mailto:jaycejefferson31@gmail.com">📧 Email</a>
-          <a href="https://github.com/your-github" target="_blank" rel="noreferrer">💻 GitHub</a>
-          <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
+          <a href="https://github.com/JayceFR/" target="_blank" rel="noreferrer">💻 GitHub</a>
+          <a href="https://www.linkedin.com/in/jayce-jefferson/" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
         </div>
       </main>
     </div>
