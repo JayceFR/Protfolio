@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://JayceFR.github.io/Protfolio",
+  "homepage": "https://jaycefr.github.io/Protfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
