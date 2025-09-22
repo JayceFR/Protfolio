@@ -32,6 +32,8 @@ import mephious from '../assets/projects/mephious.gif'
 
 import acorns from '../assets/projects/acorns.gif'
 
+import minoy from '../assets/projects/minoy.png'
+
 export default function Projects() {
   const projects = [
     {
@@ -151,6 +153,17 @@ export default function Projects() {
       repo: "https://github.com/JayceFR/JayCorn",
       demo: "https://www.youtube.com/watch?v=6HcEmO38BHQ",
       store : "https://vicious-jayjan.itch.io/autumn-acorns",
+      dataImages: [],
+      dataText: []
+    },
+    {
+      title: "Minoy",
+      description: "Game submitted to the MiniJam 133", 
+      techstack: "Tech Stack: Python, Pygame",
+      image: minoy,
+      repo: "https://github.com/JayceFR/Minoy",
+      demo: "https://www.youtube.com/watch?v=rHwOz10aiPM",
+      store : "https://vicious-jayjan.itch.io/minoy",
       dataImages: [],
       dataText: []
     },
