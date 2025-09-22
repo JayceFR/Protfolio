@@ -228,52 +228,61 @@ export default function Projects() {
       </div>
 
       {selectedProject && (
-  <div className="project-popup">
-    <button className="close-btn" onClick={() => setSelectedProject(null)}>×</button>
-    <h2>{selectedProject.title}</h2>
-    <div className="popup-image">
-      <img src={selectedProject.image} alt={selectedProject.title} />
-    </div>
-    <p>{selectedProject.description}</p>
-    <p><em>{selectedProject.techstack}</em></p>
-
-    {selectedProject.demo && (
-          <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
-            {selectedProject.demo.includes("youtube") ? "Watch Demo" : "Live Site"}
-          </a>
-        )}
-        {selectedProject.repo && (
-          <a href={selectedProject.repo} target="_blank" rel="noopener noreferrer">
-            View Repository
-          </a>
-        )}
-        {selectedProject.store && (
-          <a href={selectedProject.store} target="_blank" rel="noopener noreferrer">
-            {selectedProject.store.includes("play.google") ? "Play Store" : "Itch.io"}
-          </a>
-        )}
-
-        {Array.from(
-          { length: Math.max(selectedProject.dataImages.length, selectedProject.dataText.length) },
-          (_, idx) => (
-            <div className="popup-box" key={idx}>
-              {selectedProject.dataImages[idx] && (
-                <div className="popup-image">
-                  <img
-                    src={selectedProject.dataImages[idx]}
-                    alt={`${selectedProject.title} screenshot ${idx + 1}`}
-                  />
-                </div>
-              )}
-              {selectedProject.dataText[idx] && (
-                <p className="popup-text">{selectedProject.dataText[idx]}</p>
-              )}
-            </div>
-          )
-        )}
-
+  <div
+    className="popup-overlay"
+    onClick={() => setSelectedProject(null)} // closes when clicking overlay
+  >
+    <div
+      className="project-popup"
+      onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+    >
+      <button className="close-btn" onClick={() => setSelectedProject(null)}>
+        ×
+      </button>
+      <h2>{selectedProject.title}</h2>
+      <div className="popup-image">
+        <img src={selectedProject.image} alt={selectedProject.title} />
       </div>
-    )}
+      <p>{selectedProject.description}</p>
+      <p><em>{selectedProject.techstack}</em></p>
+
+      {selectedProject.demo && (
+        <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
+          {selectedProject.demo.includes("youtube") ? "Watch Demo" : "Live Site"}
+        </a>
+      )}
+      {selectedProject.repo && (
+        <a href={selectedProject.repo} target="_blank" rel="noopener noreferrer">
+          View Repository
+        </a>
+      )}
+      {selectedProject.store && (
+        <a href={selectedProject.store} target="_blank" rel="noopener noreferrer">
+          {selectedProject.store.includes("play.google") ? "Play Store" : "Itch.io"}
+        </a>
+      )}
+
+      {Array.from(
+        { length: Math.max(selectedProject.dataImages.length, selectedProject.dataText.length) },
+        (_, idx) => (
+          <div className="popup-box" key={idx}>
+            {selectedProject.dataImages[idx] && (
+              <div className="popup-image">
+                <img
+                  src={selectedProject.dataImages[idx]}
+                  alt={`${selectedProject.title} screenshot ${idx + 1}`}
+                />
+              </div>
+            )}
+            {selectedProject.dataText[idx] && (
+              <p className="popup-text">{selectedProject.dataText[idx]}</p>
+            )}
+          </div>
+        )
+      )}
+    </div>
+  </div>
+)}
 
     </section>
   );
