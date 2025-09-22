@@ -24,6 +24,10 @@ import projectile3 from '../assets/projects/projectile3.gif'
 
 import darklight from '../assets/projects/darklight.gif'
 
+import library from '../assets/projects/library.gif'
+import library2 from '../assets/projects/library2.png'
+import library3 from '../assets/projects/library3.png'
+
 export default function Projects() {
   const projects = [
     {
@@ -80,7 +84,7 @@ export default function Projects() {
     {
       title: "Musicify - Mobile Music Player",
       description: "A mobile app that allows users to play and manage their local music library with a sleek and intuitive interface. Supports playlists, shuffle, repeat, and background playback.",
-      techstack: "Tech Stack: Kotlin, Jetpack Compose",
+      techstack: "Tech Stack: Kotlin, Jetpack Compose, Sqlite, Media3",
       image: musicify,
       repo: "https://github.com/JayceFR/Musicify",
       dataImages: [musicify2],
@@ -112,7 +116,18 @@ export default function Projects() {
       dataImages: [],
       dataText: []
     },
-
+    {
+      title: "Community Library",
+      description: "A project aimed at creating a community-driven library platform where users can contribute, share, and discover books.",
+      techstack: "Tech Stack: React, GoLang, MySQL",
+      image: library,
+      repo: "https://github.com/JayceFR/Library_FrontEnd",
+      dataImages: [library2, library3],
+      dataText: [
+        "Uses a custom GoLang backend with a MySQL database to manage user data and book information.",
+        "Features real time messaging using WebSockets to allow users to communicate to each other in real time."
+      ]
+    },
   ];
 
   const [selectedProject, setSelectedProject] = useState(null);
