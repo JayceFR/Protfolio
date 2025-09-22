@@ -15,6 +15,9 @@ import pawnrace from '../assets/projects/pawnrace.gif'
 import pawnrace2 from '../assets/projects/pawnrace2.gif'
 import pawnrace3 from '../assets/projects/pawnrace3.gif'
 
+import musicify from '../assets/projects/musicify.gif'
+import musicify2 from '../assets/projects/musicify2.gif'
+
 export default function Projects() {
   const projects = [
     {
@@ -66,6 +69,17 @@ export default function Projects() {
       dataText: [
         "Features a two player local multiplayer mode, allowing two players to compete on the same device by taking turns.",
         "Includes a custom built AI opponent built using Minimax algorithm and alpha-beta pruning, providing a challenging experience for solo players."
+      ]
+    },
+    {
+      title: "Musicify - Mobile Music Player",
+      description: "A mobile app that allows users to play and manage their local music library with a sleek and intuitive interface. Supports playlists, shuffle, repeat, and background playback.",
+      techstack: "Tech Stack: Kotlin, Jetpack Compose",
+      image: musicify,
+      repo: "https://github.com/JayceFR/Musicify",
+      dataImages: [musicify2],
+      dataText: [
+        "Supports playlists, shuffle, repeat, and background playback."
       ]
     },
 
