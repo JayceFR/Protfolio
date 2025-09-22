@@ -11,6 +11,10 @@ import eyespy3 from '../assets/projects/eyespy3.gif'
 import popnik from '../assets/projects/popnik.gif'
 import popnik2 from '../assets/projects/popnik2.gif'
 
+import pawnrace from '../assets/projects/pawnrace.gif'
+import pawnrace2 from '../assets/projects/pawnrace2.gif'
+import pawnrace3 from '../assets/projects/pawnrace3.gif'
+
 export default function Projects() {
   const projects = [
     {
@@ -51,6 +55,20 @@ export default function Projects() {
       dataImages: [popnik2],
       dataText: ["Enemy use A* pathfinding to chase the player around the level, while the player can shoot projectiles to defeat them. Levels are procedurally generated using a cellular automata algorithm to create maze-like structures that are different each time."]
     },
+
+    {
+      title: "PawnRace - Mobile game",
+      description: "A mobile game built as an extension to the PPT coursework PawnRace, where the game ends when one pawn reaches the opposite side of the board.",
+      techstack: "Tech Stack: Kotlin, Jetpack Compose",
+      image: pawnrace,
+      repo: "https://github.com/JayceFR/PawnRace",
+      dataImages: [pawnrace2, pawnrace3],
+      dataText: [
+        "Features a two player local multiplayer mode, allowing two players to compete on the same device by taking turns.",
+        "Includes a custom built AI opponent built using Minimax algorithm and alpha-beta pruning, providing a challenging experience for solo players."
+      ]
+    },
+
   ];
 
   const [selectedProject, setSelectedProject] = useState(null);
