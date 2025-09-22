@@ -30,6 +30,8 @@ import library3 from '../assets/projects/library3.png'
 
 import mephious from '../assets/projects/mephious.gif'
 
+import acorns from '../assets/projects/acorns.gif'
+
 export default function Projects() {
   const projects = [
     {
@@ -138,6 +140,17 @@ export default function Projects() {
       repo: "https://github.com/JayceFR/Mephious",
       demo: "https://www.youtube.com/watch?v=DzJlJjgDBQE",
       store : "https://vicious-jayjan.itch.io/mephious",
+      dataImages: [],
+      dataText: []
+    },
+    {
+      title: "Autumn Acorns",
+      description: "Game submitted to the Strawberry game jam. Secured gold",
+      techstack: "Tech Stack: Python, Pygame",
+      image: acorns,
+      repo: "https://github.com/JayceFR/JayCorn",
+      demo: "https://www.youtube.com/watch?v=6HcEmO38BHQ",
+      store : "https://vicious-jayjan.itch.io/autumn-acorns",
       dataImages: [],
       dataText: []
     },
