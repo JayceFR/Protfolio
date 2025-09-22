@@ -28,6 +28,8 @@ import library from '../assets/projects/library.gif'
 import library2 from '../assets/projects/library2.png'
 import library3 from '../assets/projects/library3.png'
 
+import mephious from '../assets/projects/mephious.gif'
+
 export default function Projects() {
   const projects = [
     {
@@ -127,6 +129,17 @@ export default function Projects() {
         "Uses a custom GoLang backend with a MySQL database to manage user data and book information.",
         "Features real time messaging using WebSockets to allow users to communicate to each other in real time."
       ]
+    },
+    {
+      title: "Mephious",
+      description: "Game submitted to the MelonJam 4 game jam. Ranked top 5",
+      techstack: "Tech Stack: Python, Pygame",
+      image: mephious,
+      repo: "https://github.com/JayceFR/Mephious",
+      demo: "https://www.youtube.com/watch?v=DzJlJjgDBQE",
+      store : "https://vicious-jayjan.itch.io/mephious",
+      dataImages: [],
+      dataText: []
     },
   ];
 
