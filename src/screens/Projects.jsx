@@ -9,12 +9,13 @@ import eyespy2 from '../assets/projects/eyespy2.png'
 import eyespy3 from '../assets/projects/eyespy3.gif'
 
 import popnik from '../assets/projects/popnik.gif'
+import popnik2 from '../assets/projects/popnik2.gif'
 
 export default function Projects() {
   const projects = [
     {
       title: "3D World Generator",
-      description: "Procedural terrain generation with OpenGL, controlled via webcam facial tracking.",
+      description: "Procedural terrain generation with OpenGL, controlled via webcam facial tracking. Done as part of an extension to the C Group Project",
       techstack: "Tech Stack: C, OpenGL, GLFW, Mediapipe, Python",
       image: terrainGif,
       repo: "https://github.com/JayceFR/VisionTerrain",
@@ -45,11 +46,10 @@ export default function Projects() {
       description: "A mobile game that challenges players to navigate a series of procedurally generated levels defeating enemies and hacking computers!",
       techstack: "Tech Stack: C, Raylib, GLSL",
       image: popnik,
-      demo: "https://youtu.be/demo-video",
-      repo: "https://github.com/username/pawn-race",
+      repo: "https://github.com/JayceFR/VampyReloaded",
       store: "https://itch.io/game/pawn-race",
-      dataImages: [],
-      dataText: []
+      dataImages: [popnik2],
+      dataText: ["Enemy use A* pathfinding to chase the player around the level, while the player can shoot projectiles to defeat them. Levels are procedurally generated using a cellular automata algorithm to create maze-like structures that are different each time."]
     },
   ];
 
