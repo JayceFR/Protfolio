@@ -181,6 +181,17 @@ export default function Projects() {
       dataImages: [],
       dataText: []
     },
+    {
+      title: "Cozy Comali",
+      description: "Game submitted to the Winter Melon Jam 2022", 
+      techstack: "Tech Stack: Python, Pygame",
+      image: comali,
+      repo: "https://github.com/JayceFR/Cozy_Comali",
+      store : "https://vicious-jayjan.itch.io/cozy-comali",
+      demo : "https://www.youtube.com/watch?v=QQwoFLNwITE",
+      dataImages: [],
+      dataText: []
+    },
   ];
 
   const [selectedProject, setSelectedProject] = useState(null);
