@@ -10,7 +10,7 @@ import Education from "./screens/Education";
 // ---------------- MAIN LAYOUT ----------------
 export default function Portfolio() {
   return (
-    <Router>
+    <Router basename="/Protfolio">
       <Layout />
     </Router>
   );
