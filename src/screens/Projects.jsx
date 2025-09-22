@@ -22,6 +22,8 @@ import projectile from '../assets/projects/projectile.gif'
 import projectile2 from '../assets/projects/projectile2.gif'
 import projectile3 from '../assets/projects/projectile3.gif'
 
+import darklight from '../assets/projects/darklight.gif'
+
 export default function Projects() {
   const projects = [
     {
@@ -98,6 +100,17 @@ export default function Projects() {
         "Supports real time rendering of projectiles in graphs based on user-defined parameters. Immediate visual feedback allows users to understand the effects of different parameters on projectile motion.",
         "Features 3 different celestial bodies (Earth, Moon, Mars) with accurate gravitational forces, allowing users to simulate projectile motion in different environments."
       ]
+    },
+    {
+      title: "DarkLight",
+      description: "Game submitted to the PolyMars X ScoreSpace game jam. Travel as a descendant of the lord of the shadows looking for his lost brother captured by the Red Hoodies.",
+      techstack: "Tech Stack: Python, Pygame",
+      image: darklight,
+      repo: "https://github.com/JayceFR/DarkLight",
+      demo: "https://www.youtube.com/watch?v=8KmwRP9enY4",
+      store : "https://vicious-jayjan.itch.io/darklight",
+      dataImages: [],
+      dataText: []
     },
 
   ];
